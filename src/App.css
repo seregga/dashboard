@@ -17,4 +17,5 @@
     overflow: hidden;
     padding: 5px;
     height: 100%;
+    border-right: solid black 1px;
 }

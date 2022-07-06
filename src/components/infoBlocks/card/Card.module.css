@@ -1,5 +1,8 @@
 .wrap {
-    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
     height: 150px;
     background-color: #fff;
     border-radius: 5px;

@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './FalseChart_1.module.css'
+import s from './Chart.module.css'
 
 const FalseChart_1 = ({ children, ...props }) => {
     return (
