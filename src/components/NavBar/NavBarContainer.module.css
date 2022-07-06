@@ -1,0 +1,5 @@
+.wrap {
+    grid-area: n;
+    padding: 10px;
+    background-color: #363740;
+}

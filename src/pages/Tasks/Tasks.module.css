@@ -1,0 +1,54 @@
+.wrap {
+    background-color: darkgray;
+    width: 100%;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.taskTable {
+    padding: 5px;
+    border: solid black 1px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+}
+
+.taskTable th {
+    width: 25%;
+    padding: 5px;
+    text-decoration: underline overline darkgray;
+    /* text-decoration: none; */
+    text-align: center;
+}
+
+.taskTable td {
+    border: solid black 1px;
+    width: 25%;
+    text-decoration: underline overline darkgray;
+    /* text-decoration: none; */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px;
+    cursor: grab;
+}
+
+.taskTable tr {
+    text-align: center;
+    text-decoration: none;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    background-color: darkgray;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}

@@ -1,0 +1,26 @@
+.wrap {
+    background-color: rgb(240, 106, 133);
+    width: 30%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.wrap a {
+    color: #fff;
+    text-decoration: none;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.supplysTable {
+    padding: 5px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+}
+
+.supplysTable td {
+    text-align: center;
+
+}

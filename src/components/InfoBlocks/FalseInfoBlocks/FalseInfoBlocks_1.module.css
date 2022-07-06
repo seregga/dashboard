@@ -1,0 +1,9 @@
+.wrap {
+    width: 120px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #000;
+    text-align: center;
+    box-sizing: border-box;
+}

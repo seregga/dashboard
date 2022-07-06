@@ -1,0 +1,23 @@
+.wrap {
+    max-width: 40%;
+    height: 150px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 8px 36px rgba(0, 0, 0, 0.16);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    flex: 1 1 auto;
+}
+
+.wrap a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+.inside {
+    text-align: center;
+}

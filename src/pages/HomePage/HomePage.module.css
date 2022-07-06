@@ -1,0 +1,21 @@
+.wrap {
+    /* background-color: aqua; */
+}
+
+.row_1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.row_2 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.row_3 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
