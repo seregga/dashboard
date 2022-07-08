@@ -8,7 +8,7 @@ import NavBarContainer from './components/navBar/NavBarContainer';
 import HomePageContainer from './pages/homePage/HomePageContainer';
 import Supplys from './pages/supplys/Supplys';
 import Tasks from './pages/tasks/Tasks';
-import Regions from './pages/regions/Regions';
+import Notes from './pages/notes/Notes';
 
 function App() {
     return (
@@ -21,7 +21,7 @@ function App() {
                     <Route exact path='/dashboard' element={< HomePageContainer />} /> // костыль для gh-pages
                     <Route exact path='/supplys' element={<Supplys />} />
                     <Route exact path='/tasks' element={<Tasks />} />
-                    <Route exact path='/regions' element={<Regions />} />
+                    <Route exact path='/notes' element={<Notes />} />
                 </Routes>
 
             </div>

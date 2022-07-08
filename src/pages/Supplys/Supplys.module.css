@@ -1,3 +1,47 @@
 .wrap {
-    background-color: crimson;
+    height: 100%;
+    display: grid;
+    max-width: 1024px;
+    grid-template-areas:
+        "n c"
+    ;
+    grid-template-rows: 100vh;
+    grid-template-columns: 2fr 10fr;
+    /* grid-gap: 5px; */
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.nav {
+    grid-area: n;
+    overflow: hidden;
+    padding: 5px;
+    box-sizing: border-box;
+    height: 100%;
+    border-right: solid black 1px;
+    background-color: lightgrey;
+
+}
+
+.nav input {
+    max-width: 100%;
+    max-height: 20px;
+}
+
+.nav ul {
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    list-style: disc;
+}
+
+.content {
+    grid-area: c;
+    overflow: hidden;
+    padding: 5px;
+    box-sizing: border-box;
+    height: 100%;
+    border-right: solid black 1px;
+    background-color: rgb(138, 192, 192);
+
 }

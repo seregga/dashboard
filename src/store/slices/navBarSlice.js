@@ -8,7 +8,7 @@ const initialState = {
         { id: 1, name: 'Главная', path: '/', icon: mainIcon },
         { id: 2, name: 'Поставки', path: '/supplys', icon: tasksIcon },
         { id: 3, name: 'Задачи', path: '/tasks', icon: tasksIcon },
-        { id: 4, name: 'Регионы', path: '/regions', icon: tasksIcon },
+        { id: 4, name: 'Заметки', path: '/notes', icon: tasksIcon },
     ]
 }
 
