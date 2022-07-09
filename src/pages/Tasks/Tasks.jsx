@@ -24,15 +24,16 @@ const Tasks = (props) => {
     function dragStartHandler(e, el) {
         setCurrentEl(el)
     }
-    // function dragEndHandler(e) {
-    //     e.target.style.background = 'darkgray'
-    // }
-    // function dragOverHandler(e) {
-    //     e.preventDefault()
-    //     e.target.style.background = 'lightgray'
-    // }
+    function dragOverHandler(e) {
+        e.preventDefault()
+        e.target.style.background = 'lightgray'
+    }
+    function dragLeaveHandler(e) {
+        e.target.style.background = 'darkgray'
+    }
     function dropHandler(e, el) {
         e.preventDefault()
+        e.target.style.background = 'darkgray'
         setTdList(tdList.map(element => {
             if (element.id === el.id) {
                 return { ...element, num: currentEl.num }
@@ -45,13 +46,12 @@ const Tasks = (props) => {
         }))
     }
 
-    const sortTdArray = (a, b) => {
+    const sortedTd = (a, b) => {
         if (a.num > b.num) {
             return 1
         } else {
             return -1
         }
-
     }
 
     return (
@@ -67,11 +67,11 @@ const Tasks = (props) => {
                     </thead>
                     <tbody>
                         <tr>
-                            {tdList.sort(sortTdArray).map(td =>
+                            {tdList.sort(sortedTd).map(td =>
                                 <td key={td.id}
                                     onDragStart={(e) => dragStartHandler(e, td)}
-                                    // onDragLeave={(e) => dragEndHandler(e)}
-                                    // onDragOver={(e) => dragOverHandler(e)}
+                                    onDragLeave={(e) => dragLeaveHandler(e)}
+                                    onDragOver={(e) => dragOverHandler(e)}
                                     // onDragEnd={(e) => dragEndHandler(e)}
                                     onDrop={(e) => dropHandler(e, td)}
                                     draggable={td.draggable}
