@@ -40,7 +40,7 @@
     text-decoration: none;
 }
 
-input {
+/* input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,4 +51,9 @@ input {
     outline: none;
     cursor: pointer;
     text-decoration: none;
+} */
+
+.wrap button {
+    width: 100%;
+    text-align: center;
 }

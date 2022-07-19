@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import s from './Supplys.module.css';
+import { getAllCitys } from './../../http/citysApi';
 
 
 const Supplys = (props) => {
 
-    const [citys, setSitys] = useState([
-        { id: 1, city: 'Санкт-Петеребург' },
-        { id: 2, city: 'Москва' },
-        { id: 3, city: 'Екатеринбург' },
-        { id: 4, city: 'Краснодар' },
-        { id: 5, city: 'Новосибирск' },
-        { id: 6, city: 'Хабаровск' },
-        { id: 7, city: 'Геленджик' },
-        { id: 8, city: 'Севастополь' },
+    const [citys, setCitys] = useState([
+        { id: 1, title: 'Санкт-Петеребург' },
+        { id: 2, title: 'Москва' },
+        { id: 3, title: 'Екатеринбург' },
+        { id: 4, title: 'Краснодар' },
+        { id: 5, title: 'Новосибирск' },
+        { id: 6, title: 'Хабаровск' },
+        { id: 7, title: 'Геленджик' },
+        { id: 8, title: 'Севастополь' },
     ])
 
     const [citysFiltered, setCitysFiltered] = useState(citys)
     const [searchCity, setSearchCity] = useState('')
 
+    // useEffect(() => {
+    //     getAllCitys().then(r => setCitys(r.data))
+    // }, [])
+
     useEffect(() => {
         setCitysFiltered(
-            citys.filter(c => {
-                return c.city.toLowerCase().indexOf(searchCity.toLowerCase()) > -1
-            })
+            citys.filter(c => c.title.toLowerCase().indexOf(searchCity.toLowerCase()) > -1)
         )
-    }, [searchCity])
+    }, [searchCity, citys])
 
     return (
         <div className={s.wrap}>
@@ -33,10 +36,10 @@ const Supplys = (props) => {
                     type="text"
                     value={searchCity}
                     onChange={e => setSearchCity(e.target.value)}
-                    placeholder='фильтр'
+                    placeholder='искать город'
                 />
                 <ul>
-                    {citysFiltered.map(c => <li key={c.id}>{c.city}</li>)}
+                    {citysFiltered.map(c => <li key={c.id}>{c.title}</li>)}
                 </ul>
             </div>
             <div className={s.content}>

@@ -19,11 +19,9 @@ const navBarSlice = createSlice({
     reducers: {
         setNavBar(state) {
             state.navBarElems = initialState.navBarElems
-            console.log(state.navBarElems);
         },
         hideNavBar(state) {
             state.navBarElems = []
-            console.log(state.navBarElems);
         }
     },
 })

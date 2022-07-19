@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
 
 import s from './Tasks.module.css'
 
@@ -46,48 +45,38 @@ const Tasks = (props) => {
         }))
     }
 
-    const sortedTd = (a, b) => {
-        if (a.num > b.num) {
-            return 1
-        } else {
-            return -1
-        }
-    }
+    // const clickHandler = () => {
+    //     console.log('ok');
+    // }
 
     return (
         <div className={s.wrap}>
-            <NavLink to='/tasks'>
-                <table className={s.taskTable}>
-                    <thead>
-                        <tr>
-                            {thList.map(th =>
-                                <th key={th.id} colSpan={th.colSpan}>{th.text}</th>
-                            )}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            {tdList.sort(sortedTd).map(td =>
-                                <td key={td.id}
-                                    onDragStart={(e) => dragStartHandler(e, td)}
-                                    onDragLeave={(e) => dragLeaveHandler(e)}
-                                    onDragOver={(e) => dragOverHandler(e)}
-                                    // onDragEnd={(e) => dragEndHandler(e)}
-                                    onDrop={(e) => dropHandler(e, td)}
-                                    draggable={td.draggable}
-                                >
-                                    {td.text}
-                                </td>
-                            )}
-
-
-
-                        </tr>
-
-                    </tbody>
-                </table>
-
-            </NavLink>
+            <table className={s.taskTable}>
+                <thead>
+                    <tr>
+                        {thList.map(th =>
+                            <th key={th.id} colSpan={th.colSpan}>{th.text}</th>
+                        )}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {tdList.sort((a, b) => a.num - b.num).map(td =>
+                            <td key={td.id}
+                                onDragStart={(e) => dragStartHandler(e, td)}
+                                onDragLeave={(e) => dragLeaveHandler(e)}
+                                onDragOver={(e) => dragOverHandler(e)}
+                                // onDragEnd={(e) => dragEndHandler(e)}
+                                onDrop={(e) => dropHandler(e, td)}
+                                draggable={td.draggable}
+                            >
+                                {td.text}
+                            </td>
+                        )}
+                    </tr>
+                </tbody>
+            </table>
+            {/* <button onClick={clickHandler}>добавить задачу</button> */}
         </div>
     )
 }

@@ -1,15 +1,10 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import navBarSlice from './slices/navBarSlice'
-
-const rootReucer = combineReducers({
-    navBar: navBarSlice
-})
+import notesSlice from './slices/notesSlice'
 
 export const store = configureStore({
-    reducer: rootReucer
+    reducer: {
+        navBar: navBarSlice,
+        notes: notesSlice
+    }
 })
-// export const store = configureStore({
-//     reduser: {
-//         navBar: navBarSlice
-//     }
-// })

@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux'
 const Header = (props) => {
 
     const dispatch = useDispatch()
-
     // const navElems = useSelector(state => state.navBar.navBarElems)
 
     return (
