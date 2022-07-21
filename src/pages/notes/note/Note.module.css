@@ -1,0 +1,13 @@
+.note {
+    overflow-wrap: break-word;
+    overflow: hidden;
+    width: 175px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    background: #cadd23;
+}
+
+.note:hover {
+    cursor: grab;
+}

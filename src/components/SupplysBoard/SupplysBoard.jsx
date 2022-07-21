@@ -10,21 +10,21 @@ const SupplysBoard = (props) => {
                 <table className={s.supplysTable}>
                     <thead>
                         <tr>
-                            <th colSpan="2">План поставок крови</th>
+                            <th colSpan="2">План поставок</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Кровь 1</td>
-                            <td>100 л</td>
+                            <td>Товар 1</td>
+                            <td>100 шт</td>
                         </tr>
                         <tr>
-                            <td>Кровь 2</td>
-                            <td>200 л</td>
+                            <td>Товар 2</td>
+                            <td>200 шт</td>
                         </tr>
                         <tr>
-                            <td>Кровь 3</td>
-                            <td>250 л</td>
+                            <td>Товар 3</td>
+                            <td>250 шт</td>
                         </tr>
                     </tbody>
                 </table>

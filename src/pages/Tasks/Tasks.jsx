@@ -4,14 +4,14 @@ import s from './Tasks.module.css'
 
 const Tasks = (props) => {
 
-    const [thList, setThList] = useState([
+    const [thList, setThList] = useState([ // перенести в state
         { id: 1, colSpan: 1, text: 'создана задача' },
         { id: 2, colSpan: 1, text: 'в работе' },
         { id: 3, colSpan: 1, text: 'на проверке' },
         { id: 4, colSpan: 1, text: 'завершена' },
     ])
 
-    const [tdList, setTdList] = useState([
+    const [tdList, setTdList] = useState([ // перенести в state
         { id: 1, num: 1, draggable: true, text: 'потяни меня' },
         { id: 2, num: 2, draggable: false, text: null },
         { id: 3, num: 3, draggable: false, text: null },
@@ -30,7 +30,9 @@ const Tasks = (props) => {
     function dragLeaveHandler(e) {
         e.target.style.background = 'darkgray'
     }
-    function dropHandler(e, el) {
+    function dropHandler(e, el) {// перенести в state
+        console.log(`task${e.id}`);
+        console.log(`task${el.id}`);
         e.preventDefault()
         e.target.style.background = 'darkgray'
         setTdList(tdList.map(element => {
