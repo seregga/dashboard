@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import s from './Notes.module.css'
 import { useSelector, useDispatch } from 'react-redux';
-import { setNotes } from '../../store/slices/notesSlice';
+import { setEditNote, setNotes, setEndEditNote, setTextNote } from '../../store/slices/notesSlice';
 import Note from './note/Note';
 
 const Notes = () => {
+
     const notes = useSelector(state => state.notes.notes)
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -16,13 +18,8 @@ const Notes = () => {
     }, [])
 
     const btnHandler = () => {
-        dispatch(setNotes([...notes, {
-            id: Math.random().toString().substring(2, 9),
-            text: '',
-            isEdit: false,
-            pdng: '10px',
-            pdngTxtr: null,
-        }]))
+        const id = Math.random().toString().substring(2, 9);
+        dispatch(setNotes({ id, pdng: '10px' }))
     }
 
     const mouseDownHandler = (e) => {
@@ -44,49 +41,30 @@ const Notes = () => {
 
     };
 
-
-
-    const doubleClickHandler = (e, el) => {
-
-        dispatch(setNotes(notes.map(n => {
-            if (n.id == el.id) {
-                return {
-                    ...n,
-                    isEdit: true,
-                    pdng: 0,
-                    pdngTxtr: e.target.style.padding,
-                }
-            } else {
-                return n
-            }
-        })))
+    const doubleClickHandler = (e, note) => {
+        dispatch(setEditNote({
+            id: note.id,
+            pdngTxtr: e.target.style.padding
+        }))
     }
 
-    const blurHandler = (e, el) => {
+    const blurHandler = (e, note) => {
 
-        dispatch(setNotes(notes.map(n => {
-            if (n.id == el.id) {
-                return {
-                    ...n,
-                    isEdit: false,
-                    pdng: e.target.style.padding,
-                    pdngTxtr: null,
-                }
-            } else {
-                return n
-            }
-        })))
+        dispatch(setEndEditNote({
+            id: note.id,
+            pdng: e.target.style.padding,
+            pdngTxtr: null,
+        }))
+
         e.target.onblur = null;
     }
 
-    const changeHandler = (e, el) => {
-        dispatch(setNotes(notes.map(n => {
-            if (el.id == n.id) {
-                return { ...n, text: e.target.value }
-            } else {
-                return n
-            }
-        })))
+
+    const changeHandler = (e, note) => {
+        dispatch(setTextNote({
+            id: note.id,
+            text: e.target.value
+        }))
     }
 
     return (

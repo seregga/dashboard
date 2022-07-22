@@ -1,55 +1,43 @@
 import React, { useState } from 'react'
+import { editTdList } from '../../store/slices/tasksSlice'
 
 import s from './Tasks.module.css'
+import { useDispatch, useSelector } from 'react-redux';
 
 const Tasks = (props) => {
 
-    const [thList, setThList] = useState([ // перенести в state
-        { id: 1, colSpan: 1, text: 'создана задача' },
-        { id: 2, colSpan: 1, text: 'в работе' },
-        { id: 3, colSpan: 1, text: 'на проверке' },
-        { id: 4, colSpan: 1, text: 'завершена' },
-    ])
-
-    const [tdList, setTdList] = useState([ // перенести в state
-        { id: 1, num: 1, draggable: true, text: 'потяни меня' },
-        { id: 2, num: 2, draggable: false, text: null },
-        { id: 3, num: 3, draggable: false, text: null },
-        { id: 4, num: 4, draggable: false, text: null }
-    ])
-
     const [currentEl, setCurrentEl] = useState()
+
+    const { thList, tdList } = useSelector(state => state.tasks)
+
+    const tdListSort = Object.assign(JSON.parse(JSON.stringify(tdList))).sort((a, b) => a.num - b.num);
+
+    const dispatch = useDispatch()
 
     function dragStartHandler(e, el) {
         setCurrentEl(el)
     }
+
     function dragOverHandler(e) {
         e.preventDefault()
         e.target.style.background = 'lightgray'
     }
+
     function dragLeaveHandler(e) {
         e.target.style.background = 'darkgray'
     }
-    function dropHandler(e, el) {// перенести в state
-        console.log(`task${e.id}`);
-        console.log(`task${el.id}`);
+
+    function dropHandler(e, el) {
         e.preventDefault()
         e.target.style.background = 'darkgray'
-        setTdList(tdList.map(element => {
-            if (element.id === el.id) {
-                return { ...element, num: currentEl.num }
-            }
-            if (element.id === currentEl.id) {
-                return { ...element, num: el.num }
-            }
-            return element
 
+        dispatch(editTdList({
+            dropId: el.id,
+            dropNum: el.num,
+            currentId: currentEl.id,
+            currentNum: currentEl.num,
         }))
     }
-
-    // const clickHandler = () => {
-    //     console.log('ok');
-    // }
 
     return (
         <div className={s.wrap}>
@@ -63,7 +51,7 @@ const Tasks = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        {tdList.sort((a, b) => a.num - b.num).map(td =>
+                        {tdListSort.map(td =>
                             <td key={td.id}
                                 onDragStart={(e) => dragStartHandler(e, td)}
                                 onDragLeave={(e) => dragLeaveHandler(e)}
@@ -73,8 +61,8 @@ const Tasks = (props) => {
                                 draggable={td.draggable}
                             >
                                 {td.text}
-                            </td>
-                        )}
+                            </td>)
+                        }
                     </tr>
                 </tbody>
             </table>
@@ -83,5 +71,3 @@ const Tasks = (props) => {
     )
 }
 export default Tasks
-
-{/* <input type="text" placeholder='создать задачу' /> */ }

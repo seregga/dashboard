@@ -20,12 +20,20 @@ const tasksSlice = createSlice({
     name: 'notes',
     initialState,
     reducers: {
-        setTdList(state, action) {
-            state.tdList
+        editTdList(state, action) {
+            state.tdList = state.tdList.map(td => {
+                if (td.id == action.payload.dropId) {
+                    return { ...td, num: action.payload.currentNum }
+                }
+                if (td.id == action.payload.currentId) {
+                    return { ...td, num: action.payload.dropNum }
+                }
+                return td
+            })
         }
     }
 })
 
-export const { } = tasksSlice.actions;
+export const { editTdList } = tasksSlice.actions;
 
 export default tasksSlice.reducer;
