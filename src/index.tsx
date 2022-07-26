@@ -7,16 +7,16 @@ import App from './App';
 import './index.css';
 
 
-// console.log(process.env.REACT_APP_API_URL)
+const rootElement = document.getElementById('root')
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <React.StrictMode>
+if (rootElement) {
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(
         <BrowserRouter>
             <Provider store={store}>
                 <App />
             </Provider>
         </BrowserRouter>
-    </React.StrictMode>
-);
+    );
+}
 

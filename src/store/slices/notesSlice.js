@@ -27,7 +27,7 @@ const notesSlice = createSlice({
         },
         setEditNote(state, action) {
             state.notes = state.notes.map(n => {
-                if (n.id == action.payload.id) {
+                if (n.id === action.payload.id) {
                     return {
                         ...n,
                         isEdit: true,
@@ -41,7 +41,7 @@ const notesSlice = createSlice({
         },
         setEndEditNote(state, action) {
             state.notes = state.notes.map(n => {
-                if (n.id == action.payload.id) {
+                if (n.id === action.payload.id) {
                     return {
                         ...n,
                         isEdit: false,
@@ -55,7 +55,7 @@ const notesSlice = createSlice({
         },
         setTextNote(state, action) {
             state.notes = state.notes.map(n => {
-                if (n.id == action.payload.id) {
+                if (n.id === action.payload.id) {
                     return {
                         ...n,
                         text: action.payload.text

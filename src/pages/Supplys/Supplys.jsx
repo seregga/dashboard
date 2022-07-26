@@ -1,26 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import s from './Supplys.module.css';
-import { getAllCitys } from './../../http/citysApi';
+// import { fetchCitys } from '../../store/slices/citysSlice'; // включить при рабочем сервере
+import { useSelector, useDispatch } from 'react-redux';
 
 
-const Supplys = (props) => {
+const Supplys = () => {
 
-    const [citys, setCitys] = useState([
-        { id: 1, title: 'Санкт-Петеребург' },
-        { id: 2, title: 'Москва' },
-        { id: 3, title: 'Екатеринбург' },
-        { id: 4, title: 'Краснодар' },
-        { id: 5, title: 'Новосибирск' },
-        { id: 6, title: 'Хабаровск' },
-        { id: 7, title: 'Геленджик' },
-        { id: 8, title: 'Севастополь' },
-    ])
+    const { citys } = useSelector(state => state.citys)
+
+    // включить при рабочем сервере
+    // const dispatch = useDispatch()
 
     const [citysFiltered, setCitysFiltered] = useState(citys)
     const [searchCity, setSearchCity] = useState('')
 
+    // включить при рабочем сервере
     // useEffect(() => {
-    //     getAllCitys().then(r => setCitys(r.data))
+    //     dispatch(fetchCitys())
     // }, [])
 
     useEffect(() => {
@@ -29,44 +25,42 @@ const Supplys = (props) => {
         )
     }, [searchCity, citys])
 
-    return (
-        <div className={s.wrap}>
-            <div className={s.nav}>
-                <input
-                    type="text"
-                    value={searchCity}
-                    onChange={e => setSearchCity(e.target.value)}
-                    placeholder='искать город'
-                />
-                <ul>
-                    {citysFiltered.map(c => <li key={c.id}>{c.title}</li>)}
-                </ul>
-            </div>
-            <div className={s.content}>
-
-                <table className={s.supplysTable}>
-                    <thead>
-                        <tr>
-                            <th colSpan="2">План поставок</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Товар 1</td>
-                            <td>100 шт</td>
-                        </tr>
-                        <tr>
-                            <td>Товар 2</td>
-                            <td>200 шт</td>
-                        </tr>
-                        <tr>
-                            <td>Товар 3</td>
-                            <td>250 шт</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    return (<div className={s.wrap}>
+        <div className={s.nav}>
+            <input
+                type="text"
+                value={searchCity}
+                onChange={e => setSearchCity(e.target.value)}
+                placeholder='искать город'
+            />
+            <ul>
+                {citysFiltered.map(c => <li key={c.id}>{c.title}</li>)}
+            </ul>
         </div>
-    )
+        <div className={s.content}>
+
+            <table className={s.supplysTable}>
+                <thead>
+                    <tr>
+                        <th colSpan="2">План поставок</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Товар 1</td>
+                        <td>100 шт</td>
+                    </tr>
+                    <tr>
+                        <td>Товар 2</td>
+                        <td>200 шт</td>
+                    </tr>
+                    <tr>
+                        <td>Товар 3</td>
+                        <td>250 шт</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>)
 }
 export default Supplys

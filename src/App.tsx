@@ -17,11 +17,11 @@ function App() {
             <NavBarContainer />
             <div className='app-wrapper-content'>
                 <Routes>
-                    <Route exact path='/' element={< HomePageContainer />} />
-                    <Route exact path='/dashboard' element={< HomePageContainer />} /> // костыль для gh-pages
-                    <Route exact path='/supplys' element={<Supplys />} />
-                    <Route exact path='/tasks' element={<Tasks />} />
-                    <Route exact path='/notes' element={<Notes />} />
+                    <Route path='/' element={< HomePageContainer />} />
+                    <Route path='/dashboard' element={< HomePageContainer />} /> // костыль для gh-pages
+                    <Route path='/supplys' element={<Supplys />} />
+                    <Route path='/tasks' element={<Tasks />} />
+                    <Route path='/notes' element={<Notes />} />
                 </Routes>
 
             </div>

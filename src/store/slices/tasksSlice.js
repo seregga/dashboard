@@ -13,7 +13,6 @@ const initialState = {
         { id: 3, num: 3, draggable: false, text: null },
         { id: 4, num: 4, draggable: false, text: null }
     ],
-
 }
 
 const tasksSlice = createSlice({
@@ -22,10 +21,10 @@ const tasksSlice = createSlice({
     reducers: {
         editTdList(state, action) {
             state.tdList = state.tdList.map(td => {
-                if (td.id == action.payload.dropId) {
+                if (td.id === action.payload.dropId) {
                     return { ...td, num: action.payload.currentNum }
                 }
-                if (td.id == action.payload.currentId) {
+                if (td.id === action.payload.currentId) {
                     return { ...td, num: action.payload.dropNum }
                 }
                 return td

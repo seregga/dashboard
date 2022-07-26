@@ -10,7 +10,7 @@ const Tasks = (props) => {
 
     const { thList, tdList } = useSelector(state => state.tasks)
 
-    const tdListSort = Object.assign(JSON.parse(JSON.stringify(tdList))).sort((a, b) => a.num - b.num);
+    const tdListSorted = Object.assign(JSON.parse(JSON.stringify(tdList))).sort((a, b) => a.num - b.num);
 
     const dispatch = useDispatch()
 
@@ -51,7 +51,7 @@ const Tasks = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        {tdListSort.map(td =>
+                        {tdListSorted.map(td =>
                             <td key={td.id}
                                 onDragStart={(e) => dragStartHandler(e, td)}
                                 onDragLeave={(e) => dragLeaveHandler(e)}
@@ -61,7 +61,7 @@ const Tasks = (props) => {
                                 draggable={td.draggable}
                             >
                                 {td.text}
-                            </td>)
+                            </td>).sort((a, b) => a.num - b.num)
                         }
                     </tr>
                 </tbody>
