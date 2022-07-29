@@ -1,8 +1,11 @@
 import React from 'react'
 import s from './Card.module.css'
 
+type CardProps = {
+    children: string;
+}
 
-const Card = ({ children }) => {
+const Card: React.FC<CardProps> = ({ children }) => {
     return (
         <div className={s.wrap}>
             {children}

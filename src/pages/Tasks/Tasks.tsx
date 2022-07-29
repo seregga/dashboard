@@ -1,42 +1,51 @@
 import React, { useState } from 'react'
 import { editTdList } from '../../store/slices/tasksSlice'
-
 import s from './Tasks.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 
-const Tasks = (props) => {
+type TaskObj = {
+    id: number,
+    num: number,
+    draggable: boolean,
+    text?: any
+}
 
-    const [currentEl, setCurrentEl] = useState()
+const Tasks: React.FC = () => {
 
-    const { thList, tdList } = useSelector(state => state.tasks)
+    const [currentEl, setCurrentEl] = useState<TaskObj>()
 
-    const tdListSorted = Object.assign(JSON.parse(JSON.stringify(tdList))).sort((a, b) => a.num - b.num);
+    const { thList, tdList } = useSelector((state: any) => state.tasks)
+
+    const tdListSorted = Object.assign(JSON.parse(JSON.stringify(tdList))).sort((a: TaskObj, b: TaskObj) => a.num - b.num);
 
     const dispatch = useDispatch()
 
-    function dragStartHandler(e, el) {
+    const dragStartHandler = (e: any, el: TaskObj) => {
         setCurrentEl(el)
     }
 
-    function dragOverHandler(e) {
+    const dragOverHandler = (e: any) => {
         e.preventDefault()
         e.target.style.background = 'lightgray'
     }
 
-    function dragLeaveHandler(e) {
+    const dragLeaveHandler = (e: any) => {
         e.target.style.background = 'darkgray'
     }
 
-    function dropHandler(e, el) {
+    const dropHandler = (e: any, el: TaskObj) => {
         e.preventDefault()
         e.target.style.background = 'darkgray'
 
-        dispatch(editTdList({
-            dropId: el.id,
-            dropNum: el.num,
-            currentId: currentEl.id,
-            currentNum: currentEl.num,
-        }))
+        currentEl
+            ? dispatch(editTdList({
+                dropId: el.id,
+                dropNum: el.num,
+                currentId: currentEl.id,
+                currentNum: currentEl.num,
+            }))
+            : alert('Ошибка загрузки списка задач')
+
     }
 
     return (
@@ -44,14 +53,14 @@ const Tasks = (props) => {
             <table className={s.taskTable}>
                 <thead>
                     <tr>
-                        {thList.map(th =>
+                        {thList.map((th: any) =>
                             <th key={th.id} colSpan={th.colSpan}>{th.text}</th>
                         )}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        {tdListSorted.map(td =>
+                        {tdListSorted.map((td: TaskObj) =>
                             <td key={td.id}
                                 onDragStart={(e) => dragStartHandler(e, td)}
                                 onDragLeave={(e) => dragLeaveHandler(e)}
@@ -61,7 +70,7 @@ const Tasks = (props) => {
                                 draggable={td.draggable}
                             >
                                 {td.text}
-                            </td>).sort((a, b) => a.num - b.num)
+                            </td>).sort((a: TaskObj, b: TaskObj) => a.num - b.num)
                         }
                     </tr>
                 </tbody>

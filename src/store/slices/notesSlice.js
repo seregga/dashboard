@@ -2,11 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     notes: [
-        // id: null,
+        // id: action.payload.id,
         // text: '',
         // isEdit: false,
-        // pdng: null,
-        // pdngTxtr: null,
     ],
 }
 
@@ -20,8 +18,6 @@ const notesSlice = createSlice({
                 id: action.payload.id,
                 text: '',
                 isEdit: false,
-                pdng: action.payload.pdng,
-                pdngTxtr: null,
             }
             ]
         },
@@ -31,8 +27,6 @@ const notesSlice = createSlice({
                     return {
                         ...n,
                         isEdit: true,
-                        pdng: 0,
-                        pdngTxtr: action.payload.pdngTxtr,
                     }
                 } else {
                     return n
@@ -45,8 +39,6 @@ const notesSlice = createSlice({
                     return {
                         ...n,
                         isEdit: false,
-                        pdng: action.payload.pdng,
-                        pdngTxtr: action.payload.pdngTxtr,
                     }
                 } else {
                     return n
@@ -65,9 +57,12 @@ const notesSlice = createSlice({
                 }
             })
         },
+        deleteNote(state, action) {
+            state.notes = state.notes.filter(n => n.id !== action.payload.id)
+        },
     }
 })
 
-export const { setNotes, setEditNote, setEndEditNote, setTextNote } = notesSlice.actions;
+export const { setNotes, setEditNote, setEndEditNote, setTextNote, deleteNote } = notesSlice.actions;
 
 export default notesSlice.reducer;

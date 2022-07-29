@@ -4,7 +4,7 @@ import { hideNavBar, setNavBar } from '../../store/slices/navBarSlice';
 import { useDispatch } from 'react-redux'
 
 
-const Header = (props) => {
+const Header: React.FC = () => {
 
     const dispatch = useDispatch()
     // const navElems = useSelector(state => state.navBar.navBarElems)

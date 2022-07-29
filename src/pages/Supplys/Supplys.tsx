@@ -4,9 +4,9 @@ import s from './Supplys.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 
 
-const Supplys = () => {
+const Supplys: React.FC = () => {
 
-    const { citys } = useSelector(state => state.citys)
+    const { citys } = useSelector((state: any) => state.citys)
 
     // включить при рабочем сервере
     // const dispatch = useDispatch()
@@ -21,7 +21,7 @@ const Supplys = () => {
 
     useEffect(() => {
         setCitysFiltered(
-            citys.filter(c => c.title.toLowerCase().indexOf(searchCity.toLowerCase()) > -1)
+            citys.filter((c: any) => c.title.toLowerCase().indexOf(searchCity.toLowerCase()) > -1)
         )
     }, [searchCity, citys])
 
@@ -34,7 +34,7 @@ const Supplys = () => {
                 placeholder='искать город'
             />
             <ul>
-                {citysFiltered.map(c => <li key={c.id}>{c.title}</li>)}
+                {citysFiltered.map((c: any) => <li key={c.id}>{c.title}</li>)}
             </ul>
         </div>
         <div className={s.content}>
@@ -42,7 +42,7 @@ const Supplys = () => {
             <table className={s.supplysTable}>
                 <thead>
                     <tr>
-                        <th colSpan="2">План поставок</th>
+                        <th colSpan={2}>План поставок</th>
                     </tr>
                 </thead>
                 <tbody>

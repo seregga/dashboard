@@ -1,8 +1,10 @@
 Dashboard (панель управления)
 
+-TypeScript
 -Фронт на React
 -Store Redux toolkit
 -БД postgreSQL
+-Sequelize
 -Express
 
 

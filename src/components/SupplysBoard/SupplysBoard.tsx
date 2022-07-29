@@ -3,14 +3,14 @@ import s from './SupplysBoard.module.css';
 import { NavLink } from 'react-router-dom';
 
 
-const SupplysBoard = (props) => {
+const SupplysBoard: React.FC = () => {
     return (
         <div className={s.wrap}>
             <NavLink to='/supplys'>
                 <table className={s.supplysTable}>
                     <thead>
                         <tr>
-                            <th colSpan="2">План поставок</th>
+                            <th colSpan={2}>План поставок</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,7 +28,6 @@ const SupplysBoard = (props) => {
                         </tr>
                     </tbody>
                 </table>
-
             </NavLink>
         </div>
     )

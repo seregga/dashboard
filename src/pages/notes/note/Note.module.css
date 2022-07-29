@@ -1,4 +1,6 @@
 .note {
+    position: relative;
+    font-size: 16px;
     overflow-wrap: break-word;
     overflow: hidden;
     width: 175px;
@@ -6,8 +8,23 @@
     box-sizing: border-box;
     border: 1px solid grey;
     background: #cadd23;
+    padding: 10px;
+    border-radius: 3px;
 }
 
 .note:hover {
     cursor: grab;
+}
+
+.button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: transparent;
+    border: none;
+    color: grey;
+}
+
+button:hover {
+    cursor: pointer;
 }
