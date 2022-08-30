@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/dashboard/static/css/main.35d97b8e.css",
-    "main.js": "/dashboard/static/js/main.3c7b0b3f.js",
+    "main.css": "/dashboard/static/css/main.90f523b6.css",
+    "main.js": "/dashboard/static/js/main.a268da7f.js",
+    "static/media/airplane-flight.svg": "/dashboard/static/media/airplane-flight.4930d81f607a42916a481f1c00619233.svg",
     "static/media/tasksIcon.svg": "/dashboard/static/media/tasksIcon.fb0f53cd799576a205536cd685adcc39.svg",
     "index.html": "/dashboard/index.html",
-    "main.35d97b8e.css.map": "/dashboard/static/css/main.35d97b8e.css.map",
-    "main.3c7b0b3f.js.map": "/dashboard/static/js/main.3c7b0b3f.js.map"
+    "main.90f523b6.css.map": "/dashboard/static/css/main.90f523b6.css.map",
+    "main.a268da7f.js.map": "/dashboard/static/js/main.a268da7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.35d97b8e.css",
-    "static/js/main.3c7b0b3f.js"
+    "static/css/main.90f523b6.css",
+    "static/js/main.a268da7f.js"
   ]
 }
