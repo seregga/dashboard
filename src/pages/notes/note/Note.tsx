@@ -29,7 +29,7 @@ const Note: React.FC<NoteProps> = (props) => {
 
     const dispatch = useDispatch()
 
-    const clickHandler = (e: any) => {
+    const clickHandler = () => {
         dispatch(deleteNote({ id }))
     }
 

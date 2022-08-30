@@ -5,8 +5,12 @@
     color: #fff;
     cursor: pointer;
     margin-bottom: 20px;
+    user-select: none;
 }
 
 .image {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
     margin-right: 20px;
 }

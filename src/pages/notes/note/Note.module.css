@@ -7,7 +7,7 @@
     height: 200px;
     box-sizing: border-box;
     border: 1px solid grey;
-    background: #cadd23;
+    background: mediumspringgreen;
     padding: 10px;
     border-radius: 3px;
 }
@@ -23,6 +23,7 @@
     background-color: transparent;
     border: none;
     color: grey;
+    user-select: none;
 }
 
 button:hover {

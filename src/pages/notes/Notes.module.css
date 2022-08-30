@@ -6,6 +6,13 @@
     background-color: '#cadd23';
 }
 
+
+.desc {
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.575);
+    user-select: none;
+}
+
 .container p {
     margin: 0;
 }
@@ -16,9 +23,10 @@
     height: 25px;
     border: none;
     border-radius: 3px;
-    background-color: darkgray;
+    background-color: dimgray;
     color: beige;
     margin-bottom: 10px;
+    user-select: none;
 }
 
 .addBtn:active {

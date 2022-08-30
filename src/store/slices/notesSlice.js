@@ -5,6 +5,9 @@ const initialState = {
         // id: action.payload.id,
         // text: '',
         // isEdit: false,
+        // position: static,
+        // top: 0,
+        // left: 0
     ],
 }
 

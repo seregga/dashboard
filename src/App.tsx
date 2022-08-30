@@ -9,6 +9,7 @@ import HomePageContainer from './pages/homePage/HomePageContainer';
 import Supplys from './pages/supplys/Supplys';
 import Tasks from './pages/tasks/Tasks';
 import Notes from './pages/notes/Notes';
+import Tickets from './pages/tickets/Tickets';
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path='/supplys' element={<Supplys />} />
                     <Route path='/tasks' element={<Tasks />} />
                     <Route path='/notes' element={<Notes />} />
+                    <Route path='/tickets' element={<Tickets />} />
                 </Routes>
 
             </div>

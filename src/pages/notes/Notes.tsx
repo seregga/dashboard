@@ -68,7 +68,7 @@ const Notes: React.FC = () => {
         <>
             <div className={s.container}>
                 <button className={s.addBtn} onClick={btnHandler}>добавить заметку</button>
-                <p>заметку можно перетаскивать, удалять и редактировать(дважды кликни на заметке ) </p>
+                <div className={s.desc}>заметку можно перетаскивать, удалять и редактировать(дважды кликни на заметке ) </div>
                 <div>
                     {notes.map((n: any) => {
                         return <Note

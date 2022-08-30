@@ -2,9 +2,13 @@ import React from 'react';
 import s from './NavBar.module.css';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = (props) => {
+type NavBarProps = {
+    navElems: any;
+}
 
-    const navBarElement = props.navElems.map((el) => {
+const NavBar: React.FC<NavBarProps> = ({ navElems }) => {
+
+    const navBarElement = navElems.map((el: any) => {
         return <NavLink className={s.item} key={el.id} to={el.path} >
             <img className={s.image} src={el.icon} alt="icon" />
             {el.name}
