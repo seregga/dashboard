@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/dashboard/static/css/main.90f523b6.css",
-    "main.js": "/dashboard/static/js/main.a268da7f.js",
+    "main.css": "/dashboard/static/css/main.433a9d0c.css",
+    "main.js": "/dashboard/static/js/main.5b77c6e5.js",
+    "static/media/logo.png": "/dashboard/static/media/logo.f615b9f18b57a60a5261.png",
     "static/media/airplane-flight.svg": "/dashboard/static/media/airplane-flight.4930d81f607a42916a481f1c00619233.svg",
     "static/media/tasksIcon.svg": "/dashboard/static/media/tasksIcon.fb0f53cd799576a205536cd685adcc39.svg",
     "index.html": "/dashboard/index.html",
-    "main.90f523b6.css.map": "/dashboard/static/css/main.90f523b6.css.map",
-    "main.a268da7f.js.map": "/dashboard/static/js/main.a268da7f.js.map"
+    "main.433a9d0c.css.map": "/dashboard/static/css/main.433a9d0c.css.map",
+    "main.5b77c6e5.js.map": "/dashboard/static/js/main.5b77c6e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.90f523b6.css",
-    "static/js/main.a268da7f.js"
+    "static/css/main.433a9d0c.css",
+    "static/js/main.5b77c6e5.js"
   ]
 }
