@@ -9,7 +9,7 @@ type NavBarProps = {
 const NavBar: React.FC<NavBarProps> = ({ navElems }) => {
 
     const navBarElement = navElems.map((el: any) => {
-        return <NavLink className={s.item} key={el.id} to={el.path} >
+        return <NavLink className={s.item} key={el.id} to={el.path}>
             <img className={s.image} src={el.icon} alt="icon" />
             {el.name}
         </NavLink>

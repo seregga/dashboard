@@ -36,6 +36,11 @@ const Notes: React.FC = () => {
         }
 
         document.onmouseup = (e: any) => {
+            localStorage.setItem('coords', JSON.stringify({
+                X,
+                Y
+            }))
+
             e.target.style.zIndex = null;
             document.onmousemove = null;
             document.onmouseup = null;

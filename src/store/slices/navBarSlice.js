@@ -5,6 +5,7 @@ import tasksIcon from './../../assets/icons/tasksIcon.svg'
 import deliveryIcon from './../../assets/icons/truck.png'
 import flyFiterIcon from './../../assets/icons/airplane-flight.svg'
 import notesIcon from './../../assets/icons/notes.png'
+import staff from './../../assets/icons/staff.png'
 
 const initialState = {
     navBarElems: [
@@ -13,6 +14,7 @@ const initialState = {
         { id: 3, name: 'Задачи', path: '/tasks', icon: tasksIcon },
         { id: 4, name: 'Заметки', path: '/notes', icon: notesIcon },
         { id: 5, name: 'Билеты', path: '/tickets', icon: flyFiterIcon },
+        { id: 5, name: 'Сотрудники', path: '/staff', icon: staff },
     ]
 }
 

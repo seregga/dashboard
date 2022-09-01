@@ -6,8 +6,10 @@ const initialState = {
         // text: '',
         // isEdit: false,
         // position: static,
-        // top: 0,
-        // left: 0
+        // coords:{
+        // x: 0,
+        // y: 0
+        // }
     ],
 }
 
@@ -60,12 +62,26 @@ const notesSlice = createSlice({
                 }
             })
         },
+        // setCoords(state, action) {
+        //     console.log(action.payload.id);
+        //     state.notes = state.notes.map(n => {
+        //         if (n.id === action.payload.id) {
+        //             return {
+        //                 ...n,
+        //                 x: action.payload.x,
+        //                 y: action.payload.y,
+        //             }
+        //         } else {
+        //             return n
+        //         }
+        //     })
+        // },
         deleteNote(state, action) {
             state.notes = state.notes.filter(n => n.id !== action.payload.id)
         },
     }
 })
 
-export const { setNotes, setEditNote, setEndEditNote, setTextNote, deleteNote } = notesSlice.actions;
+export const { setNotes, setEditNote, setEndEditNote, setTextNote, deleteNote, setCoords } = notesSlice.actions;
 
 export default notesSlice.reducer;

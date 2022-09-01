@@ -4,4 +4,19 @@
     color: #fff;
     font-size: 18px;
     font-weight: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+.title {
+    margin: 0;
+}
+
+.wrap img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 10px;
 }

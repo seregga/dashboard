@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import NavBarContainer from './components/navBar/NavBarContainer';
-// import HeaderContainer from './components/header/HeaderContainer';
+import HeaderContainer from './components/header/HeaderContainer';
 import HomePageContainer from './pages/homePage/HomePageContainer';
 import Supplys from './pages/supplys/Supplys';
 import Tasks from './pages/tasks/Tasks';
@@ -14,7 +14,7 @@ import Tickets from './pages/tickets/Tickets';
 function App() {
     return (
         <div className="app-wrapper">
-            {/* <HeaderContainer /> */}
+            <HeaderContainer />
             <NavBarContainer />
             <div className='app-wrapper-content'>
                 <Routes>
