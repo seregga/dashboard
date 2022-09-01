@@ -10,6 +10,7 @@ import Supplys from './pages/supplys/Supplys';
 import Tasks from './pages/tasks/Tasks';
 import Notes from './pages/notes/Notes';
 import Tickets from './pages/tickets/Tickets';
+import Staff from './pages/staff/Staff';
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path='/tasks' element={<Tasks />} />
                     <Route path='/notes' element={<Notes />} />
                     <Route path='/tickets' element={<Tickets />} />
+                    <Route path='/staff' element={<Staff />} />
                 </Routes>
 
             </div>

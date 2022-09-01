@@ -14,7 +14,7 @@ const initialState = {
         { id: 3, name: 'Задачи', path: '/tasks', icon: tasksIcon },
         { id: 4, name: 'Заметки', path: '/notes', icon: notesIcon },
         { id: 5, name: 'Билеты', path: '/tickets', icon: flyFiterIcon },
-        { id: 5, name: 'Сотрудники', path: '/staff', icon: staff },
+        { id: 6, name: 'Сотрудники', path: '/staff', icon: staff },
     ]
 }
 

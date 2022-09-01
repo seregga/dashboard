@@ -1,0 +1,30 @@
+.container {
+    /* position: relative; */
+    text-align: center;
+    width: 100%;
+}
+
+.container input {
+    margin-bottom: 10px;
+    font-size: 20px;
+    width: 90%;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 5px 15px;
+
+    background-image: url('../../../assets/icons/search.png');
+    background-repeat: no-repeat;
+    background-position: 745px 2px;
+    background-size: 30px 30px;
+}
+
+.searchImg {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
+    fill: rgb(202, 78, 240);
+}

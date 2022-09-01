@@ -1,0 +1,57 @@
+.card {
+    margin: 10px;
+    width: 270px;
+    height: 230px;
+    overflow: hidden;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px rgb(75 74 74 / 40%);
+    cursor: pointer;
+}
+
+.card a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.name {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.phone {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+
+    background-image: url(../../../../assets/icons/phone.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 0 4px;
+}
+
+.phone a {
+    padding-left: 30px;
+}
+
+.email {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    background-image: url(../../../../assets/icons/mail.svg);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: -5px -5px;
+
+}
+
+.email a {
+    padding-left: 30px;
+}

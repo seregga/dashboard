@@ -2,5 +2,6 @@
     grid-area: n;
     padding: 10px;
     background-color: #363740;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 }
