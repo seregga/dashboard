@@ -14,12 +14,12 @@ const Modal = (props) => {
     } = props
 
     const [titles, setTitles] = React.useState([
-        'Телефон:',
-        'Почта:',
-        'Адрес:',
-        'Должность:',
-        'Департамент:',
-        'Дата найма:',
+        { id: 1, title: 'Телефон:' },
+        { id: 2, title: 'Почта:' },
+        { id: 3, title: 'Адрес:' },
+        { id: 4, title: 'Должность:' },
+        { id: 5, title: 'Департамент:' },
+        { id: 6, title: 'Дата найма:' },
     ])
 
     return (
@@ -28,7 +28,7 @@ const Modal = (props) => {
                 <div className={s.name}>{name}</div>
                 <div className={s.info}>
                     <div className={s.titles} >
-                        {titles.map(el => <p className={s.title}>{el}</p>)}
+                        {titles.map(el => <p className={s.title} key={el.id}>{el.title}</p>)}
                     </div>
                     <div className={s.desc}>
                         <p className={s.phone}>
@@ -49,24 +49,6 @@ const Modal = (props) => {
             </div>
         </div>
     )
-    // return (
-    //     <div className={s.container} onClick={closeModal}>
-    //         <div className={s.content} onClick={e => e.stopPropagation()}>
-    //             <div className={s.name}>{name}</div>
-    //             <div className={s.phone}>
-    //                 <span>Телефон:</span>
-    //                 <a href={phone}>{phone}</a>
-    //             </div>
-    //             <div className={s.email}>
-    //                 <a href={email}>{email}</a>
-    //             </div>
-    //             <p>{address}</p>
-    //             <p>{position_name}</p>
-    //             <p>{department}</p>
-    //             <p>{hire_date}</p>
-    //             <button onClick={closeModal}>x</button>
-    //         </div>
-    //     </div>
-    // )
+
 }
 export default Modal

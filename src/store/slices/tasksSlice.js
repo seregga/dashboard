@@ -11,7 +11,7 @@ const initialState = {
         { id: 1, num: 1, draggable: true, text: 'потяни меня' },
         { id: 2, num: 2, draggable: false, text: null },
         { id: 3, num: 3, draggable: false, text: null },
-        { id: 4, num: 4, draggable: false, text: null }
+        { id: 4, num: 4, draggable: false, text: null },
     ],
 }
 
