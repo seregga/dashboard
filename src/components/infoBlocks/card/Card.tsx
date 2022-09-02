@@ -3,12 +3,16 @@ import s from './Card.module.css'
 
 type CardProps = {
     children: string;
+    desc: string
 }
 
-const Card: React.FC<CardProps> = ({ children }) => {
+const Card: React.FC<CardProps> = ({ children, desc }) => {
     return (
         <div className={s.wrap}>
-            {children}
+            <div>
+                <p>{desc}</p>
+                <p>{children}</p>
+            </div>
         </div>
     )
 }

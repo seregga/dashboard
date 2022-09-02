@@ -16,12 +16,16 @@ import taskIcon from './taskIcon.png'
 
 const HomePage: React.FC = () => {
 
+    const [cardInfo, setCardInfo] = React.useState([
+        { id: 1, title: 'Доход за 1й квартал', sum: '5 600 000 ₽' },
+        { id: 2, title: 'Доход за 1й квартал', sum: '19 000 000 ₽ ₽' },
+        { id: 3, title: 'Доход за 1й квартал', sum: '568 000 000 ₽' },
+    ])
+
     return (
         <div className={s.wrap}>
             <section className={s.row_1}>
-                <Card>5600 000 ₽</Card>
-                <Card>19 000 000 ₽</Card>
-                <Card>876 000 000 000 ₽</Card>
+                {cardInfo.map(el => <Card desc={el.title} key={el.id}>{el.sum}</Card>)}
             </section>
             <section className={s.row_2}>
                 <Task image={taskIcon} path={'/tasks'}>задачи <br /> (нажми на меня)</Task>
