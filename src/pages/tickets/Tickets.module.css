@@ -1,0 +1,24 @@
+.wrap {
+    display: grid;
+    max-width: 1000px;
+    grid-template-areas:
+        "f m"
+    ;
+    grid-template-columns: 3fr 9fr;
+    padding: 0 5px;
+    margin: 0 auto;
+}
+
+.filterWrap {
+    background-color: #fff;
+    grid-area: f;
+    padding: 10px;
+}
+
+input {
+    outline: none;
+}
+
+.loader {
+    padding: 45%;
+}

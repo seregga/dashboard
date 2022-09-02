@@ -1,0 +1,121 @@
+.main__wrap {
+    grid-area: m;
+    padding: 10px;
+
+}
+
+.card {
+    margin: 10px;
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #3836df;
+    color: #fff;
+    padding: 0 10px;
+    margin: 0 0 10px;
+    box-sizing: border-box;
+}
+
+.card__logo {
+    font-size: bold;
+    color: #fff;
+}
+
+.card__cost {
+    font-size: bold;
+    color: #fff;
+}
+
+.card__cost_right {
+    text-align: end;
+}
+
+.card__info {
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.information__time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 15px;
+}
+
+.information__city {
+    text-align: center;
+}
+
+.information__city_blue {
+    color: #004dc0;
+}
+
+.information__line {
+    border: none;
+    height: 1px;
+    background-color: #DADADA;
+}
+
+.information__line_short {
+    margin: 0 auto -10px auto;
+    border: none;
+    height: 1px;
+    background-color: #DADADA;
+    width: 75%;
+}
+
+.information__transfer {
+    margin: 0 auto 10px;
+    background-color: #fff;
+    color: #e9771b;
+    width: fit-content;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.information__line_bold {
+    border: none;
+    height: 2px;
+    background-color: #004dc0;
+}
+
+.card__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background-color: #e9771b;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.query__nofound {
+    text-align: center;
+}
+
+.time {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.date {
+    color: #004dc0;
+}
+
+.main__button {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgb(22, 89, 233);
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+}
